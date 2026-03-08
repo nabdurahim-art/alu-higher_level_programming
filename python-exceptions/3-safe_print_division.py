@@ -1,5 +1,10 @@
 #!/usr/bin/python3
-def print_reversed_list_integer(my_list=[]):
-    if my_list:
-        for i in reversed(my_list):
-            print("{:d}".format(i))
+def safe_print_division(a, b):
+    result = None
+    try:
+        result = a / b
+    except ZeroDivisionError:
+        result = None
+    finally:
+        print("Inside result: {}".format(result))
+    return result
