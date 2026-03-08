@@ -1,20 +1,7 @@
 #!/usr/bin/python3
-def roman_to_int(roman_string):
-    """Convert a Roman numeral to an integer."""
+def safe_access(my_list, x):
+    """Return element at index x if valid, else None."""
     try:
-        if roman_string is None:
-            raise ValueError
-        roman_map = {'I': 1, 'V': 5, 'X': 10, 'L': 50,
-                     'C': 100, 'D': 500, 'M': 1000}
-        total = 0
-        prev_value = 0
-        for char in reversed(roman_string):
-            value = roman_map[char]  # will raise KeyError if invalid char
-            if value < prev_value:
-                total -= value
-            else:
-                total += value
-            prev_value = value
-        return total
-    except (TypeError, KeyError, ValueError):
-        return 0
+        return my_list[x]
+    except IndexError:
+        return None
