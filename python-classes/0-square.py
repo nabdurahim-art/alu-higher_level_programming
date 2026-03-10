@@ -3,5 +3,8 @@
 
 
 class Square:
-    """This class defines a square but does not contain any attributes or methods."""
+    """This class defines a square.
+
+    It does not contain any attributes or methods.
+    """
     pass
